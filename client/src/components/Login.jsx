@@ -6,9 +6,11 @@ const Login = () => {
 	return (
 		<>
 			<h2 className='title-form'>Inicia sesion</h2>
-			<TextField id="standard-basic" label="Nombre" variant="standard" />
-			<TextField id="standard-basic" label="Contraseña" variant="standard" />
-			<Button variant="contained">Comenzar</Button>
+			<form action=''>
+				<TextField id="standard-basic" label="Contraseña" variant="standard" />
+				<TextField id="standard-basic" label="Nombre" variant="standard" />
+				<Button variant="contained">Comenzar</Button>
+			</form>
 		</>
 	);
 };

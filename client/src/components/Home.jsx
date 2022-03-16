@@ -6,11 +6,17 @@ import '../assets/styles/home.scss';
 const Home = () => {
 	return (
 		<div className="container-home">
-			<div className="container-form register-form">
-				<Register />
+			<div className="container-title">
+				<h1>KLIMAT</h1>
+				<h6>The Weather Channel</h6>	
 			</div>
-			<div className="container-form login-form">
-				<Login />
+			<div className="container-forms">
+				<div className="container-form register-form">
+					<Register />
+				</div>
+				<div className="container-form login-form">
+					<Login />
+				</div>
 			</div>
 		</div>
 	);
