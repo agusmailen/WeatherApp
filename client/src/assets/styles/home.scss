@@ -81,6 +81,7 @@ body {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
+		//justify-content: space-around;
 	}
 }
 .register-form {
@@ -92,11 +93,12 @@ body {
 .MuiFormControl-root {
 	width: 100% !important;
 	margin: 10px  0px !important;
-	justify-self: end !important;	
+	justify-self: flex-end !important;	
 }
 .MuiButton-root {
 	background-color: #7a27a5c4 !important;
 	margin-top: 8px !important;
+	justify-self: flex-end !important;
 }
 .css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
 	background-color: #4aaef5e8 !important;
