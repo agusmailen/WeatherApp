@@ -5,20 +5,22 @@ class UserController {
 
 	create(req, res) {
 		const payload = req.body;
-		console.log(payload);
 		User.create(payload)
 		.then( user => {
-			if(!(payload && payload.name)) return res.json({ status: 400, message: 'Todos los campos son obligatorios' });
-			//if (!user) return res.json({ status: 400, message: 'El usuario ya existe' });
-			return res.json({
+			// console.log('desde controlador', user)
+			if (user) return res.json({
 				status: 200,
 				payload: user
+			});
+			else return res.json({
+				status: 403,
+				message: 'comiste pija'
 			})
 		})
 		.catch(err => {
-			return res.json ({ status: 400, error: err });
+			return res.json ({ status: 400, error: err.message, message: 'Ocurrió un error. El usuario no pudo ser registrado'});
 		});
-	}
+	};
 
 }
 
