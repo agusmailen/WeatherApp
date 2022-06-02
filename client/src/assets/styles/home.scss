@@ -6,7 +6,6 @@ body {
 	animation: fadeInAnimation ease 3s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
-	
 }
 @keyframes fadeInAnimation {
 	0% {
@@ -17,92 +16,43 @@ body {
 	}
 }
 .container-home {
+	background-image: url('../static/Town-sunset-river-orange-sky_1920x1200.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 	height: 100vh;
-	color: #212121;
+	color: #F7F7F7;
 	width: 100%;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	background: rgb(92,4,77);
-	background: linear-gradient(180deg, rgba(92,4,77,0.26934523809523814) 0%, rgba(250,5,232,0.04525560224089631) 50%, rgba(28,165,193,0.17690826330532217) 100%);
-}
-.container-title {
-	margin: 20px;
-	height: 20%;
-	width: 40%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	h1, h6 {
-		margin: 0;
-	}
-	h1 {
-		font-size: 60px;
-		letter-spacing: 6px;
-	}
-	h6 {
-		margin-top: 0px;
-		font-size: 20px;
-		letter-spacing: 1.5px;
-	}
-}
-.container-forms {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	height: 65%;
-	width: 70%;
-	animation: fade-out;
-	transition: opacity 0.5s;
-	-webkit-transition: opacity 0.5s;
-	opacity: 1;
-}
-.container-form {
-	height: 100%;
-	width: 32%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 20px;
-	box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
-	-webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
+	justify-content: space-evenly;
 	text-align: center;
-	.title-form {
-		margin-top: 40px;
-	}
-	transition: opacity 0.5s;
-	-webkit-transition: opacity 0.5s;
-	opacity: 1;
-	form {
-		width: 85%;
+	.options {
 		//border: solid 1px red;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		//justify-content: space-around;
+		width: 40%;
+		h1{
+			margin: 0;
+			font-size: 3rem;
+			letter-spacing: 2.3px;
+			display: inline;
+		}
+		.options-logo{
+			width: 2em;
+			//border: solid 1px red;
+			height: 2em;
+		}
 	}
 }
-.register-form {
-	background-color: #bcd7dd99;
-}
-.login-form {
-	background-color: #d7b8d285;
+.options-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
 .MuiFormControl-root {
 	width: 100% !important;
-	margin: 10px  0px !important;
+	margin: 20px  0px !important;
 	justify-self: flex-end !important;	
 }
-.MuiButton-root {
-	background-color: #7a27a5c4 !important;
-	margin-top: 8px !important;
-	justify-self: flex-end !important;
-}
-.css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
-	background-color: #4aaef5e8 !important;
-}
+
 .form-error {
 	margin: 0px;
 	font-size: 12px;

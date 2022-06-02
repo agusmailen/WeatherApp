@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Login from './Login';
 import Register from './Register';
 import '../assets/styles/home.scss';
+import Button from '@mui/material/Button';
+
 
 const Home = () => {
+
+	const[state, setState] = useState(1);
+
 	return (
 		<div className="container-home">
-			<div className="container-title">
-				<h1>KLIMAT</h1>
-				<h6>The Weather Channel</h6>	
-			</div>
-			<div className="container-forms">
-				<div className="container-form register-form">
-					<Register />
+			<div className="options">
+				{/* <img className="options-logo"></img> */}
+				<h1>KlimWeather</h1>
+				<div className="options-buttons">
+					<div className="register">
+						<h3>No tienes cuenta?</h3>
+						<Button variant="outlined" type='submit' onClick={() => setState(1)}>Registrate</Button>
+					</div>
+					<div className="login">
+						<h3>Consultar el clima</h3>
+						<Button variant="outlined" type='submit'onClick={() => setState(0)}>Inicia Sesion</Button>
+					</div>
 				</div>
-				<div className="container-form login-form">
-					<Login />
-				</div>
 			</div>
+			{
+				state ? <Register /> : <Login/> 
+			}
 		</div>
 	);
 };
