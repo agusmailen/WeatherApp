@@ -66,6 +66,10 @@ body {
 	width: 70%;
 	text-align: left;
 }
+.input-container {
+	display: flex;
+	width: 100%;
+}
 @media screen and (max-width: 669px) {
 
 	.container-home {

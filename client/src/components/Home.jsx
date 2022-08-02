@@ -12,7 +12,6 @@ const Home = () => {
 	return (
 		<div className="container-home">
 			<div className="options">
-				{/* <img className="options-logo"></img> */}
 				<h1>KlimWeather</h1>
 				<div className="options-buttons">
 					<div className="register">
