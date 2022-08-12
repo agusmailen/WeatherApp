@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 import '../utils/moment';
+import { getCurrentWeather } from '../redux/actions/CurrentWeather.action';
+import { connect } from 'react-redux';
 
-
-const SearchCityForm = () => {
+const SearchCityForm = (props) => {
+	const { currentWeather } = props;
 
 	const [city, setCity] = useState("");
 
@@ -13,7 +15,8 @@ const SearchCityForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		city ? console.log({city}) : alert("Debe ingresar una ciudad");
+		console.log(city)
+		city ? props.getCurrentWeather(city) : alert("Debe ingresar una ciudad");
 
 		
 	};
@@ -34,4 +37,10 @@ const SearchCityForm = () => {
 	)
 }
 
-export default SearchCityForm;
+const mapStateToProps = (state) => ({
+	currentWeather: state.currentWeather.currentWeather,
+});
+
+export default connect(mapStateToProps, {
+	getCurrentWeather,
+})(SearchCityForm);
