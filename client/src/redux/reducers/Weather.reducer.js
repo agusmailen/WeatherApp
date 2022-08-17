@@ -4,9 +4,7 @@ const currentWeatherReducer = (state = initialState, action) => {
     const { type, payload, error } = action;
     switch(type) {
         case 'SET_CURRENT_WEATHER':
-            console.log(payload)
-            const newCurrentWeather = {...payload};
-            return{...state, currentWeather: newCurrentWeather};
+            return{...state, currentWeather: payload};
         default:
             return {...state};
             
