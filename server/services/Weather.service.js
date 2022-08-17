@@ -4,7 +4,7 @@ const axios = require('axios').default;
 class WeatherService {
 
     getCurrent = async (city) => {
-        const url =  `${config.urlBase}&appid=${config.api}&q=${city}`
+        const url =  `${config.urlBase}&appid=${config.api}&q=${city}&units=metric`
         const weather = await axios.get(url);
         return weather.data;
     };
