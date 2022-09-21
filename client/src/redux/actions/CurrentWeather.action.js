@@ -6,10 +6,14 @@ export const getCurrentWeather = (payload) => {
           
         axios.get(`http://localhost:3001/weather/getCurrentWeather/${payload}`)
         .then((response) => {
-            dispatch({ type: 'SET_CURRENT_WEATHER', payload:response })
+            if(response.data.status != 200) {
+                dispatch({ type: 'SET_WEATHER_FAILED', payload: response.data.message})
+            } else {
+                dispatch({ type: 'SET_CURRENT_WEATHER', payload:response })
+            }  
         })
         .catch((error) => {
-            console.log(error);
+            dispatch({ type: 'SET_WEATHER_FAILED', payload: error})
         })
     }
 }

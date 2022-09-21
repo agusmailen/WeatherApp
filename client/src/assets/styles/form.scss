@@ -20,6 +20,9 @@
 .css-o943dk-MuiFormLabel-root-MuiInputLabel-root, .css-cio0x1-MuiInputBase-root-MuiFilledInput-root::before, .css-e4w4as-MuiFormLabel-root-MuiInputLabel-root, .css-10botns-MuiInputBase-input-MuiFilledInput-input {
 	border-bottom-color: rgba(235, 235, 235, 0.42) !important;
 	color: azure !important;
+	:-webkit-autofill {
+		color: #2a2a2a !important;
+	}
 }
 
 .MuiButton-root {
@@ -30,4 +33,18 @@
 	color:white !important;
 	border-color: azure !important;
 	margin-top: 35px;
+}
+
+.css-1rwt2y5-MuiButtonBase-root-MuiButton-root :focus{
+	color:white !important;
+	border-color: azure !important;
+	margin-top: 35px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 50000s ease-in-out 0s;
+	-webkit-text-fill-color: white !important
 }

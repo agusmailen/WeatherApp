@@ -10,6 +10,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    bottom: 10px;
+    z-index: -1;
     .temperature-value {
         font-size: 35px;
         font-family: 'Lato', sans-serif;
@@ -35,4 +38,36 @@
 .temperature-max-min {
     display: inline;
     margin: 0px 4px 0px 4px;
+}
+
+.wind_and_humidity-icons{
+    display: flex;
+    div{
+        display: flex;
+        align-items: center;
+        margin: 5px 10px;
+        img{
+            width: 30px;
+            height: 30px;
+            margin-right: 2px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .cart-container{
+        width: 75%;
+        margin-top: 20%;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+    .cart-container{
+        width: 40%;
+        //bottom: 110px;
+    }
+
 }

@@ -61,8 +61,13 @@
 	}
 }
 
+.loader-weatherRequest{
+	position: relative;
+    bottom: -60px;
+}
+
 .search-city-input {
-	background-color: #f0f8ffb3;;
+	background-color: #f0f8ffb3;
 	width: 80%;
 	color: #000000;
 	padding: 14px;
@@ -80,8 +85,33 @@
 	font-weight: bold;
 }
 
+.city_autocomplete-container {
+	width: 93%;
+	margin-left: 16px;
+	width: 78%;
+	display: flex;
+	cursor: pointer;
+	padding: 11px 12px;
+	color: #F5DCEF;
+	text-align: center;
+	align-items: center;
+	background-color: #8c8f91f7;
+	img {
+		width: 23px;
+		height: 23px;
+	}
+	div {
+		width: 100%;
+		height: 100%;
+		text-align: left;
+	}
+}
+
+.city_autocomplete-container:hover {
+	background-color: #a7aaad;
+}
+
 .weather_data-container {
-	border: red solid 1px;
 	width: 80%;
 	height: 100%;
 	margin-top: 30px;
@@ -89,10 +119,14 @@
 	justify-self: flex-end;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 767px) {
 
 	.form-search-city {
 		width: 100%;
+	}
+
+	.city_autocomplete-container {
+		width: 66%;
 	}
 
 	.nav-container {
@@ -109,3 +143,9 @@
 		font-size: 1.3rem;
 	}
 }
+
+// @media screen and (min-width: 768px) and (max-width: 1023px) {
+// 	// .form-search-city {
+// 	// 	width: 60%;
+// 	// }
+// }
