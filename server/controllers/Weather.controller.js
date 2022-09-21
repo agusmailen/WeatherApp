@@ -17,7 +17,7 @@ class WeatherController {
 			})
 		})
         .catch(err => {
-			return res.json ({ status: 400, error: err.message, message: 'Ocurrió un error. No se pudo realizar la consulta'});
+			return res.json ({ status: 400, error: err.message, message: 'Ups..Ocurrió un error... Puede que la ciudad ingresada no sea válida'});
 		});
     };
     
