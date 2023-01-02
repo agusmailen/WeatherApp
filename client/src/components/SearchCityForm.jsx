@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import '../utils/moment';
+import auto  from '../utils/autoComplete'
 import { getCurrentWeather } from '../redux/actions/CurrentWeather.action';
 import { connect } from 'react-redux';
 import CurrentWeatherCard from './WeatherCurrentCard';
 import ErrorCard from './WeatherError';
 import CircularProgress from '@mui/material/CircularProgress';
+import iconLocation from '../assets/static/target.png'
 
 const SearchCityForm = (props) => {
 
@@ -15,15 +17,17 @@ const SearchCityForm = (props) => {
 	const [loader, setLoader] = useState(null);
 
 	useEffect(() => {
+		setAutocomplete(null);
 		setLoader(null);
 	}, [props]);
 
-	const handleCity = (e) => {
+	const handleCity =  (e) => {
 		setCity(e.target.value);
 
 		if(!e.target.value.length) {
 			setAutocomplete(null)
 		} else {
+			
 			const options = {
 				method: 'GET',
 				headers: {
@@ -38,7 +42,6 @@ const SearchCityForm = (props) => {
 			.catch(err => console.error(err));
 
 		}
-			
 	}
 
 	const handleSubmit = (e) => {
@@ -59,11 +62,11 @@ const SearchCityForm = (props) => {
 	moment.locale('es');
 
 	return (
-		<>
+		<div className="search-container">
+			<div className='date-container'>
+				<h1 className='date-title'>{moment().format('dddd', 'es')}, {moment().format('Do MMMM  YYYY', 'es')}</h1>
+			</div>
 			<form className='form-search-city' onSubmit={handleSubmit}>
-				<div className='date-container'>
-					<h1 className='date-title'>{moment().format('dddd', 'es')}, {moment().format('Do MMMM  YYYY', 'es')}</h1>
-				</div>
 				<div className="input-container">
 					<input className='search-city-input' placeholder='Ciudad...' value={city} name='city' autoComplete='off' onChange={handleCity} />
 					<button type='submit'>Consultar</button>
@@ -82,6 +85,7 @@ const SearchCityForm = (props) => {
 					null
 				}
 			</form>
+			
 			{
 				loader?
 				<div className="loader-weatherRequest">
@@ -97,7 +101,7 @@ const SearchCityForm = (props) => {
 					Object.keys(currentWeather).length != 0 ? (<CurrentWeatherCard data={currentWeather} />) : null
 
 			}
-		</>
+		</div>
 	)
 }
 

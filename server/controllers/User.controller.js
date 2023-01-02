@@ -25,7 +25,6 @@ class UserController {
 
 	login(req, res) {
 		const payload = req.body;
-		console.log('desde constrolador', payload)
 		User.login(payload)
 		.then( response => {
 			if (!response) return res.json({

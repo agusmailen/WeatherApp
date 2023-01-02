@@ -18,6 +18,8 @@ const userReducer = (state = initialState, action) => {
                 user: payload,
                 error: null
             })
+        case 'ROLLBACK':
+            return {...state, initialState}
         default:
             return state;
     }

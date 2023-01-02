@@ -8,7 +8,8 @@ class UserService {
 
 	create = async ({useremail, username, userpassword}) => {
 		const existUser = await pool.query('SELECT * FROM users WHERE useremail = ?', [useremail]);
-		if(existUser.length) return false;
+		if(existUser.length) //si status = 0 return el usuaii sino false 
+			return false;
 		const payload = { username, useremail, userpassword };
 		payload.userpassword = jwt.token(payload.userpassword);
 		await pool.query('INSERT INTO users set ?', [payload]);
